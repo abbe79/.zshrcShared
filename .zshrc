@@ -67,6 +67,10 @@ alias rm='rm -i'                 # always ask for confirmation
 alias grep="grep --color=auto"   # GREP_OPTIONS is deprecated
 alias fgrep="fgrep --color=auto" # GREP_OPTIONS is deprecated
 alias egrep="egrep --color=auto" # GREP_OPTIONS is deprecated
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g ......='../../../../..'
 
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _complete _ignored

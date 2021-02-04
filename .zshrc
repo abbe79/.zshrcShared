@@ -52,7 +52,6 @@ HISTFILE=~/.zsh_history
 PROMPT='%F{238}%n@%m%f %~ %F{238}%#%f '
 RPROMPT='%(?.%F{green}√.%F{red}%?)%f'
 export CLICOLOR=1
-export GREP_OPTIONS='--color=auto'
 
 # aliases
 alias cp='cp -i'                 # prompt when overriding files
@@ -65,6 +64,9 @@ alias lr='ls -tRFh'              # sorted by date,recursive,show type,human read
 alias lt='ls -ltFh'              # long list,sorted by date,show type,human readable
 alias mv='mv -i'                 # prompt when overriding files
 alias rm='rm -i'                 # always ask for confirmation
+alias grep="grep --color=auto"   # GREP_OPTIONS is deprecated
+alias fgrep="fgrep --color=auto" # GREP_OPTIONS is deprecated
+alias egrep="egrep --color=auto" # GREP_OPTIONS is deprecated
 
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _complete _ignored

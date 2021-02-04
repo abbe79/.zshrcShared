@@ -1,20 +1,27 @@
-# my private mac
-if [[ `uname` == "Darwin" ]]; then
-	# zsh plugins
-	# https://github.com/zsh-users/zsh-syntax-highlighting
-	[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# zsh plugins
+# https://github.com/zsh-users/zsh-syntax-highlighting
+# https://github.com/zsh-users/zsh-autosuggestions
 
-	# https://github.com/zsh-users/zsh-autosuggestions
+if [[ `uname` == "Darwin" ]]; then
+	[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 	[ -f /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]         && source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-	# bind keys
-	bindkey "^[[A" history-beginning-search-backward
-	bindkey "^[[B" history-beginning-search-forward
-
-	# aliases
 	[ -f /usr/local/bin/youtube-dl ] && alias youtube-dl-music="youtube-dl -f 'bestaudio[ext=m4a]'"
+
 	echo 'Welcome at home!'
+elif [[ `uname` == "Linux" ]]; then
+	[ -f ~/.zshStuff/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source ~/.zshStuff/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	[ -f ~/.zshStuff/zsh-autosuggestions/zsh-autosuggestions.zsh ]         && source ~/.zshStuff/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+	alias internet-start='bsh-proxy --start'
+	alias internet-stop='bsh-proxy --stop'
+
+	echo 'Have a prosperous workday!'
 fi
+
+# bind keys
+bindkey '^[[A' history-beginning-search-backward
+bindkey '^[[B' history-beginning-search-forward
 
 # zsh options
 setopt ALWAYS_TO_END
@@ -41,6 +48,7 @@ setopt SHARE_HISTORY
 # variables 
 HISTSIZE=4000
 SAVEHIST=5000
+HISTFILE=~/.zsh_history
 PROMPT='%F{238}%n@%m%f %~ %F{238}%#%f '
 RPROMPT='%(?.%F{green}√.%F{red}%?)%f'
 export CLICOLOR=1

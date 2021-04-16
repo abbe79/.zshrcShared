@@ -63,7 +63,6 @@ alias ll='ls -l'                 # long list
 alias lr='ls -tRFh'              # sorted by date,recursive,show type,human readable
 alias lt='ls -ltFh'              # long list,sorted by date,show type,human readable
 alias mv='mv -i'                 # prompt when overriding files
-alias rm='rm -i'                 # always ask for confirmation
 alias grep="grep --color=auto"   # GREP_OPTIONS is deprecated
 alias fgrep="fgrep --color=auto" # GREP_OPTIONS is deprecated
 alias egrep="egrep --color=auto" # GREP_OPTIONS is deprecated

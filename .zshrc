@@ -22,6 +22,7 @@ fi
 # bind keys
 bindkey '^[[A' history-beginning-search-backward
 bindkey '^[[B' history-beginning-search-forward
+bindkey '^[[C' forward-word
 
 # zsh options
 setopt ALWAYS_TO_END
@@ -52,6 +53,7 @@ HISTFILE=~/.zsh_history
 PROMPT='%F{238}%n@%m%f %~ %F{238}%#%f '
 RPROMPT='%(?.%F{green}√.%F{red}%?)%f'
 export CLICOLOR=1
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # aliases
 alias cp='cp -i'                 # prompt when overriding files

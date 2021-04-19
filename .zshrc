@@ -16,6 +16,10 @@ elif [[ `uname` == "Linux" ]]; then
 	alias internet-start='bsh-proxy --start'
 	alias internet-stop='bsh-proxy --stop'
 
+	bindkey '^[OA' history-beginning-search-backward
+	bindkey '^[OB' history-beginning-search-backward
+	bindkey '^[0C' forward-word
+
 	echo 'Have a prosperous workday!'
 fi
 
@@ -53,7 +57,6 @@ HISTFILE=~/.zsh_history
 PROMPT='%F{238}%n@%m%f %~ %F{238}%#%f '
 RPROMPT='%(?.%F{green}√.%F{red}%?)%f'
 export CLICOLOR=1
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # aliases
 alias cp='cp -i'                 # prompt when overriding files

@@ -18,7 +18,7 @@ elif [[ `uname` == "Linux" ]]; then
 
 	bindkey '^[OA' history-beginning-search-backward
 	bindkey '^[OB' history-beginning-search-backward
-	bindkey '^[0C' forward-word
+	bindkey '^[OC' forward-word
 
 	echo 'Have a prosperous workday!'
 fi

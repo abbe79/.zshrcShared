@@ -17,7 +17,7 @@ elif [[ `uname` == "Linux" ]]; then
 	alias internet-stop='bsh-proxy --stop'
 
 	bindkey '^[OA' history-beginning-search-backward
-	bindkey '^[OB' history-beginning-search-backward
+	bindkey '^[OB' history-beginning-search-forward
 	bindkey '^[OC' forward-word
 
 	echo 'Have a prosperous workday!'

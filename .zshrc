@@ -3,16 +3,10 @@
 # https://github.com/zsh-users/zsh-autosuggestions
 
 if [[ `uname` == "Darwin" ]]; then
-	[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-	[ -f /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]         && source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 	[ -f /usr/local/bin/youtube-dl ] && alias youtube-dl-music="youtube-dl -f 'bestaudio[ext=m4a]'"
-
+	
 	echo 'Welcome at home!'
 elif [[ `uname` == "Linux" ]]; then
-	[ -f ~/.zshStuff/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source ~/.zshStuff/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-	[ -f ~/.zshStuff/zsh-autosuggestions/zsh-autosuggestions.zsh ]         && source ~/.zshStuff/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 	alias internet-start='bsh-proxy --start'
 	alias internet-stop='bsh-proxy --stop'
 
@@ -85,3 +79,8 @@ zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+[ -f /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]         && source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -f ~/.zshStuff/zsh-autosuggestions/zsh-autosuggestions.zsh ]              && source ~/.zshStuff/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f ~/.zshStuff/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]      && source ~/.zshStuff/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

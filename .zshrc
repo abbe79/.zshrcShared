@@ -80,7 +80,5 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-[ -f /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]         && source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-[ -f ~/.zshStuff/zsh-autosuggestions/zsh-autosuggestions.zsh ]              && source ~/.zshStuff/zsh-autosuggestions/zsh-autosuggestions.zsh
-[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-[ -f ~/.zshStuff/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]      && source ~/.zshStuff/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f ~/.zshrcShared/zsh-autosuggestions/zsh-autosuggestions.zsh ]              && source ~/.zshrcShared/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -f ~/.zshrcShared/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]      && source ~/.zshrcShared/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

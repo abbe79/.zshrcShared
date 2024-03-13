@@ -45,8 +45,8 @@ setopt SHARE_HISTORY
 #unsetopt NOMATCH
 
 # variables 
-HISTSIZE=4000
-SAVEHIST=5000
+HISTSIZE=10000000
+SAVEHIST=10000000
 HISTFILE=~/.zsh_history
 PROMPT='%F{238}%n@%m%f %~ %F{238}%#%f '
 RPROMPT='%(?.%F{green}√.%F{red}%?)%f'

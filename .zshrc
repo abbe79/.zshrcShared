@@ -9,6 +9,7 @@ if [[ `uname` == "Darwin" ]]; then
 elif [[ `uname` == "Linux" ]]; then
 	alias internet-start='bsh-proxy --start'
 	alias internet-stop='bsh-proxy --stop'
+	alias motd='run-parts /etc/update-motd.d'
 
 	bindkey '^[OA' history-beginning-search-backward
 	bindkey '^[OB' history-beginning-search-forward

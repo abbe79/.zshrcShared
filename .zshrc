@@ -4,13 +4,13 @@
 
 if [[ `uname` == "Darwin" ]]; then
 	[ -f /usr/local/bin/youtube-dl ] && alias youtube-dl-music="youtube-dl -f 'bestaudio[ext=m4a]'"
-	
+
 	echo 'Welcome at home!'
 elif [[ `uname` == "Linux" ]]; then
 	alias internet-start='bsh-proxy --start'
 	alias internet-stop='bsh-proxy --stop'
 	alias motd='run-parts /etc/update-motd.d'
-	alias mountUdrive='sudo mount -v -t cifs -o username=abstreitert,vers=2.1 //trtna001.euce.corp.bshg.com/home$/abstreitert /home/EU.BSHG.COM/abstreitert/Udrive'
+	alias mountUdrive='sudo mount -v -t cifs -o username=$USER,vers=2.1,uid=$USER,forceuid,gid=$GID,forcegid,rw //trtna001.euce.corp.bshg.com/home$/$USER /home/EU.BSHG.COM/$USER/Udrive'
 
 	bindkey '^[OA' history-beginning-search-backward
 	bindkey '^[OB' history-beginning-search-forward

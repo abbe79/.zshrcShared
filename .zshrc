@@ -3,8 +3,12 @@
 # https://github.com/zsh-users/zsh-autosuggestions
 
 if [[ `uname` == "Darwin" ]]; then
-	[ -f /usr/local/bin/youtube-dl ] && alias youtube-dl-music="youtube-dl -f 'bestaudio[ext=m4a]'"
-
+	if [ -f /opt/homebrew/bin/yt-dlp ]; then
+		alias yt-dlp-music="yt-dlp -f 'bestaudio[ext=m4a]'"
+	fi
+	if [ -f /opt/homebrew/bin/yt-dlp ]; then
+		alias yt-dlp-video="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]'"
+	fi
 	echo 'Welcome at home!'
 elif [[ `uname` == "Linux" ]]; then
 	alias internet-start='bsh-proxy --start'
@@ -15,7 +19,6 @@ elif [[ `uname` == "Linux" ]]; then
 	bindkey '^[OA' history-beginning-search-backward
 	bindkey '^[OB' history-beginning-search-forward
 	bindkey '^[OC' forward-word
-
 	echo 'Have a prosperous workday!'
 fi
 
@@ -82,7 +85,15 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-[ -f ~/.zshrcShared/zsh-autosuggestions/zsh-autosuggestions.zsh ]                     && source ~/.zshrcShared/zsh-autosuggestions/zsh-autosuggestions.zsh
-[ -f ~/.zshrcShared/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]             && source ~/.zshrcShared/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-[ -f ~/.myDotfiles/.zshrcShared/zsh-autosuggestions/zsh-autosuggestions.zsh ]         && source ~/.myDotfiles/.zshrcShared/zsh-autosuggestions/zsh-autosuggestions.zsh
-[ -f ~/.myDotfiles/.zshrcShared/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source ~/.myDotfiles/.zshrcShared/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f ~/.zshrcShared/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+	source ~/.zshrcShared/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+if [ -f ~/.zshrcShared/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+	source ~/.zshrcShared/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+if [ -f ~/.myDotfiles/.zshrcShared/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+	source ~/.myDotfiles/.zshrcShared/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+if [ -f ~/.myDotfiles/.zshrcShared/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+	source ~/.myDotfiles/.zshrcShared/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
